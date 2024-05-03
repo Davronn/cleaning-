@@ -6,7 +6,7 @@ import DashboardTop from "../../components/DashboardTop";
 
 const Home = () => {
   const nav = useNavigate();
-  const acess_token = localStorage.getItem("access__token");
+  const acess_token = localStorage.getItem("access__tokennn");
   useEffect(() => {
     if (!acess_token) {
       nav("/login");
