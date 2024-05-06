@@ -1,8 +1,8 @@
-import { lazy } from "react";
-const Register = lazy(() => import("./register"));
-const Login = lazy(() => import("./login"));
-const ForgotPassword = lazy(() => import("./forgot-password"));
-const Home = lazy(() => import("./home"));
-const Profile = lazy(() => import("./profile"));
+const Register = import("./register");
+const Login = import("./login");
+const ForgotPassword = import("./forgot-password");
+const Home = import("./home");
+const Profile = import("./profile");
+const Clients = import("./clients");
 
-export { Register, Login, ForgotPassword, Home,Profile };
+export { Register, Login, ForgotPassword, Home, Profile, Clients };

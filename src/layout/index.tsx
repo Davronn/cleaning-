@@ -52,7 +52,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           <Toolbar />
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Main>{children}</Main>
-            <Footer sx={{ pt: 4 }} />
+            <Footer  />
           </Container>
         </Box>
       </Box>

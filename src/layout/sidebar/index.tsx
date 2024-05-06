@@ -4,14 +4,13 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import MuiDrawer from "@mui/material/Drawer";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ListItemText from "@mui/material/ListItemText";
-import ListSubheader from "@mui/material/ListSubheader";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import PeopleIcon from "@mui/icons-material/People";
 import BarChartIcon from "@mui/icons-material/BarChart";
-import LayersIcon from "@mui/icons-material/Layers";
-import AssignmentIcon from "@mui/icons-material/Assignment";
 import { Divider, IconButton, List, Toolbar, styled } from "@mui/material";
+import { Link } from "react-router-dom";
+import { Settings } from "@mui/icons-material";
 
 const drawerWidth: number = 240;
 
@@ -41,67 +40,6 @@ const Drawer = styled(MuiDrawer, {
   },
 }));
 
-export const mainListItems = (
-  <React.Fragment>
-    <ListItemButton>
-      <ListItemIcon>
-        <DashboardIcon />
-      </ListItemIcon>
-      <ListItemText primary="Dashboard" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <ShoppingCartIcon />
-      </ListItemIcon>
-      <ListItemText primary="Orders" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <PeopleIcon />
-      </ListItemIcon>
-      <ListItemText primary="Customers" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <BarChartIcon />
-      </ListItemIcon>
-      <ListItemText primary="Reports" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <LayersIcon />
-      </ListItemIcon>
-      <ListItemText primary="Integrations" />
-    </ListItemButton>
-  </React.Fragment>
-);
-
-export const secondaryListItems = (
-  <React.Fragment>
-    <ListSubheader component="div" inset>
-      Saved reports
-    </ListSubheader>
-    <ListItemButton>
-      <ListItemIcon>
-        <AssignmentIcon />
-      </ListItemIcon>
-      <ListItemText primary="Current month" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <AssignmentIcon />
-      </ListItemIcon>
-      <ListItemText primary="Last quarter" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <AssignmentIcon />
-      </ListItemIcon>
-      <ListItemText primary="Year-end sale" />
-    </ListItemButton>
-  </React.Fragment>
-);
-
 const Sidebar = ({
   open,
   toggleDrawer,
@@ -127,10 +65,53 @@ const Sidebar = ({
       <List component="nav">
         {mainListItems}
         <Divider sx={{ my: 1 }} />
-        {secondaryListItems}
       </List>
     </Drawer>
   );
 };
+export const mainListItems = (
+  <React.Fragment>
+    <Link to="/">
+      <ListItemButton>
+        <ListItemIcon>
+          <DashboardIcon />
+        </ListItemIcon>
+        <ListItemText primary="Asosiy" />
+      </ListItemButton>
+    </Link>
+    <Link to="/orders">
+      <ListItemButton>
+        <ListItemIcon>
+          <ShoppingCartIcon />
+        </ListItemIcon>
+        <ListItemText primary="Buyurtmalar" />
+      </ListItemButton>
+    </Link>
+    <Link to="/clients">
+      <ListItemButton>
+        <ListItemIcon>
+          <PeopleIcon />
+        </ListItemIcon>
+        <ListItemText primary="Mijozlar" />
+      </ListItemButton>
+    </Link>
+    <Link to="/services">
+      <ListItemButton>
+        <ListItemIcon>
+          <BarChartIcon />
+        </ListItemIcon>
+        <ListItemText primary="Xizmatlar" />
+      </ListItemButton>
+    </Link>
+    <Link to="/settings">
+      <ListItemButton>
+        <ListItemIcon>
+          <Settings />
+        </ListItemIcon>
+        <ListItemText primary="Sozlamalar" />
+      </ListItemButton>
+    </Link>
+  </React.Fragment>
+);
 
 export default Sidebar;
