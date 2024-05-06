@@ -14,15 +14,14 @@ const AuthStore = (set: (produce: () => void) => void) => ({
         user
       );
       const data = await res.data;
-      localStorage.setItem("access__tokennn", data.access_token);
-      console.log(data);  
+      localStorage.setItem("access_token", data.access_token);
       set(
-        produce((state:any) => {
+        produce((state: any) => {
           state.email = data.email;
           state.password = data.password;
         })
       );
-    } catch (error:any) {
+    } catch (error: any) {
       console.log(error.message);
     }
   },

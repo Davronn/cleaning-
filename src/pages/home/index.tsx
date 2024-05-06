@@ -1,23 +1,9 @@
-import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import "../../sass/Home.scss";
-import Dahsboard from "../../components/DahsboardLeft";
-import DashboardTop from "../../components/DashboardTop";
 
 const Home = () => {
-  const nav = useNavigate();
-  const acess_token = localStorage.getItem("access__tokennn");
-  useEffect(() => {
-    if (!acess_token) {
-      nav("/login");
-    }
-    console.log(acess_token);
-  }, [acess_token]);
   return (
     <div className="home_df">
-      <Dahsboard />
       <div className="home">
-        <DashboardTop />
         <div className="aside">
           <div className="boxes">
             <div className="box">
