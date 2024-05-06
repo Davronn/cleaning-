@@ -42,10 +42,9 @@ const TableComponent: React.FC = () => {
       <table>
         <thead>
           <tr>
-            <th>Column 1</th>
-            <th>Column 2</th>
-            <th>Column 3</th>
-            {/* Add more headers if needed */}
+            <th>Nomi </th>
+            <th>Narxi</th>
+            <th>Qachon qoshilgani</th>
           </tr>
         </thead>
         <tbody>
@@ -54,7 +53,6 @@ const TableComponent: React.FC = () => {
               <td>{item.name}</td>
               <td>{item.owner_email}</td>
               <td>{item.price}</td>
-              {/* Add more columns if needed */}
             </tr>
           ))}
         </tbody>
