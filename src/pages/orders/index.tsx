@@ -1,3 +1,4 @@
+import NewServiceForm from "../../components/ServicesAdd";
 import Table from "../../components/Table";
 
 function Orders() {
@@ -6,6 +7,7 @@ function Orders() {
       Orders
       <div>
         <Table />
+        <NewServiceForm />
       </div>
     </div>
   );
